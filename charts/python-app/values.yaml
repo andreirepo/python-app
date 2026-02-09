@@ -1,3 +1,4 @@
+namespace: default
 replicaCount: 1
 image:
   repository: reposan/python-app
