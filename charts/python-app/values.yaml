@@ -17,14 +17,14 @@ podLabels: {}
 podSecurityContext: {}
 securityContext: {}
 service:
-  type: ClusterIP
+  type: NodePort
   port: 5000
 ingress:
   enabled: true
   className: "nginx"
   annotations: {}
   hosts:
-    - host: python-app.test.com
+    - host: python-app.argocd.local
       paths:
         - path: /
           pathType: Prefix
@@ -34,7 +34,7 @@ httpRoute:
   annotations: {}
   parentRefs:
   - name: gateway
-    sectionName: http
+    sectionName: httpse
   hostnames:
   - chart-example.local
   rules:
